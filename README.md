@@ -34,7 +34,8 @@ gradlew allureServe
 1. Создать проект в **IDEA** на базе **Gradle**
 1. **build.gradle** должен выглядеть как 
 
-```plugins {
+```
+plugins {
     id 'java'
     id "io.freefair.lombok" version "5.3.0"
     
@@ -86,13 +87,15 @@ test {
     systemProperty 'selenide.browser', 'chrome'
     systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
 }
+
 ```
 (В данном файле также интегрирован **selenide**)
 
 1. Создать файл **docker-compose.yml** и скопировать файл из [docker-compose.yml для windows](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml) 
 1. Раскомментировать строки 'for windows host'
+
 ```
-  volumes:
+volumes:
       # For windows host
       - postgres:/var/lib/postgresql/data
       # For unix host
@@ -102,7 +105,7 @@ test {
 3. Раскомментировать строки
     
 ```
-     # Docker volume for Windows host
+# Docker volume for Windows host
 volumes:
   postgres:
 ```
@@ -116,6 +119,7 @@ volumes:
  ```
  
  7. Создать файл **log4j2.xml** file в папке **resources** и прописать 
+ 
  ```
  <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
@@ -136,6 +140,7 @@ volumes:
         </Root>
     </Loggers>
 </Configuration>
+
 ```
  8. Создать файл **logback.xml** file в папке **resources** и прописать 
  
@@ -174,6 +179,7 @@ volumes:
     </root>
 
 </configuration>
+
 ```
 
 9. Для загрузки и запуска **ReportPortal** прописать в терминале команду 
@@ -184,12 +190,14 @@ docker-compose -p reportportal up -d --force-recreate
 
 10. После того, как все файлы и контейнеры загрузятся открыть в браузере <http://localhost:8080>
 11. Необходимо залогиниться в качестве админа, используя данные с официального сайта 
+
 ```
 Логин superadmin
 Пароль erebus
 ```
 
 12. Далее добавляем пользователя в проект по шагам, открывая вкладки:
+
 ```
  Administrative -> My Test Project -> Members -> Add user
  ```
@@ -200,9 +208,11 @@ docker-compose -p reportportal up -d --force-recreate
  16. Создать в проекте в **IDEA** также в папке **resources** файл **reportportal.properties**
  17. Скопировать данные из **Configuration Examples** в данный файл в **IDEA**
  18. Создать в папке **resources** файл **junit-platform.properties** и добавить в него строку: 
+ 
   ```
  junit.jupiter.extensions.autodetection.enabled=true
   ```
+  
  19. После того, как **JUnit** подключился к **ReportPortal** нужно запустить приложение и запустить тесты.
  20. На странице с **ReportPortal** слева нажать на вкладку **Launches**, после чего справа появится название launches эквивалентное указанному в файле **reportportal.properties**
  21. Нажав на нее, появится список тестов. Если нажать на каждый из них, то можно увидеть отчеты и логи.
