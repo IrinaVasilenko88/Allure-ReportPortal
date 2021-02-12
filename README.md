@@ -22,6 +22,7 @@ jcenter()
 mavenCentral()
  }
  ```
+ 
 **Для запуска использовать команду**
 ```
 gradlew clean test allureReport
@@ -89,6 +90,7 @@ test {
 }
 
 ```
+
 (В данном файле также интегрирован **selenide**)
 
 1. Создать файл **docker-compose.yml** и скопировать файл из [docker-compose.yml для windows](https://github.com/reportportal/reportportal/blob/master/docker-compose.yml) 
@@ -194,12 +196,14 @@ docker-compose -p reportportal up -d --force-recreate
 ```
 Логин superadmin
 Пароль erebus
+
 ```
 
 12. Далее добавляем пользователя в проект по шагам, открывая вкладки:
 
 ```
  Administrative -> My Test Project -> Members -> Add user
+ 
  ```
  13. Вводим имя и пароль для нового пользователя.
  14. Необходимо перелогиниться под только что созданным пользователем.
@@ -211,6 +215,7 @@ docker-compose -p reportportal up -d --force-recreate
  
   ```
  junit.jupiter.extensions.autodetection.enabled=true
+ 
   ```
   
  19. После того, как **JUnit** подключился к **ReportPortal** нужно запустить приложение и запустить тесты.
