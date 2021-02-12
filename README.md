@@ -5,15 +5,36 @@
 ## Тема: Репортинг: Report Portal
 
 - Настройка Allure, интегрированного с Selenide
-- Настройка ReportPortal (инструкция ниже)
+- Настройка ReportPortal 
 
+# Инструкция по настройке Allure
+1. В проекте в build.gradle прописать  
 
+``` plugins{id'java'id'io.qameta.allure'version'2.8.1'}
+...
+allure{autoconfigure=true
+version='2.13.0'//LatestAllureVersion
+useJUnit5{version='2.13.0'//LatestAllureVersion
+ }
+}
+repositories{
+jcenter()
+mavenCentral()
+ }
+ ```
+**Для запуска использовать команду**
+```
+gradlew clean test allureReport
+```
+``` 
+gradlew allureServe
+```
 
 # Краткая инструкция по установке ReportPortal
 1. Создать проект в **IDEA** на базе **Gradle**
 1. **build.gradle** должен выглядеть как 
-```
-plugins {
+
+```plugins {
     id 'java'
     id "io.freefair.lombok" version "5.3.0"
     
@@ -185,3 +206,8 @@ docker-compose -p reportportal up -d --force-recreate
  19. После того, как **JUnit** подключился к **ReportPortal** нужно запустить приложение и запустить тесты.
  20. На странице с **ReportPortal** слева нажать на вкладку **Launches**, после чего справа появится название launches эквивалентное указанному в файле **reportportal.properties**
  21. Нажав на нее, появится список тестов. Если нажать на каждый из них, то можно увидеть отчеты и логи.
+ 
+ **Для запуска проекта:**
+1. Склонировать проект из репозитория командой ``` git clone https://github.com/IrinaVasilenko88/Allure-ReportPortal.git``` 
+1. Открыть склонированный проект в Intellij IDEA
+1. Запустить команду ```gradlew test```
