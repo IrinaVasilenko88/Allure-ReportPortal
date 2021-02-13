@@ -223,6 +223,12 @@ docker-compose -p reportportal up -d --force-recreate
  21. Нажав на нее, появится список тестов. Если нажать на каждый из них, то можно увидеть отчеты и логи.
  
  **Для запуска проекта:**
-1. Склонировать проект из репозитория командой ``` git clone https://github.com/IrinaVasilenko88/Allure-ReportPortal.git``` 
+1. Склонировать проект из репозитория командой 
+
+``` git clone https://github.com/IrinaVasilenko88/Allure-ReportPortal.git
+``` 
 1. Открыть склонированный проект в Intellij IDEA
-1. Запустить команду ```gradlew test```
+1. Запустить команду 
+
+```gradlew test
+```
