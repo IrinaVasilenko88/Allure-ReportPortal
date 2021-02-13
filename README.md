@@ -225,10 +225,11 @@ docker-compose -p reportportal up -d --force-recreate
  **Для запуска проекта:**
 1. Склонировать проект из репозитория командой 
 
-``` git clone https://github.com/IrinaVasilenko88/Allure-ReportPortal.git
 ``` 
-1. Открыть склонированный проект в Intellij IDEA
-1. Запустить команду 
-
-```gradlew test
-```
+git clone https://github.com/IrinaVasilenko88/Allure-ReportPortal.git
+``` 
+2. Открыть склонированный проект в Intellij IDEA
+3. Открыть в терминале каталог ```artifacts```
+4. Для запуска приложения ввести команду ```java -jar app-card-delivery.jar```
+5. Запустить команду ```gradlew test```
+6. Открыть инструкцию выше и следовать шагам 19-21
