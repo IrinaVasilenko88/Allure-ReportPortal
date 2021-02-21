@@ -10,9 +10,13 @@
 # Инструкция по настройке Allure
 1. В проекте в build.gradle прописать  
 
-``` plugins{id'java'id'io.qameta.allure'version'2.8.1'}
+``` 
+plugins{
+id'java'id'io.qameta.allure'version'2.8.1'
+}
 ...
-allure{autoconfigure=true
+allure{
+autoconfigure=true
 version='2.13.0'//LatestAllureVersion
 useJUnit5{version='2.13.0'//LatestAllureVersion
  }
